@@ -1,0 +1,446 @@
+/*layout.css*/
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 40px;
+    margin-bottom: 0 !important;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: padding 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.user-status-bar {
+    background-color: #003c71; /* สีน้ำเงินเข้ม */
+    width: 100%;
+    position: sticky;
+    top: 95px; /* ตำแหน่งใต้ Navbar ปกติ */
+    z-index: 999;
+    transition: all 0.4s ease-in-out;
+    padding: 10px 0;
+}
+
+.user-status-bar.bar-scrolled {
+    top: 71px; /* ตำแหน่งใต้ Navbar เมื่อย่อแล้ว */
+}
+
+.user-status-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 8px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* ปรับตำแหน่งพิเศษสำหรับหน้า Regis (ตามโค้ดเดิม) */
+.user-status-content.center-mode {
+    justify-content: center !important;
+}
+
+.user-status-content.center-mode .scholarship-selector-group {
+    width: 350px;
+    margin-right: -560px; /* รักษา Hack เดิมไว้เพื่อให้ตำแหน่งเป๊ะ */
+}
+
+/* ปรับแต่งส่วนเลือกทุน */
+.scholarship-selector-group {
+    flex: 1;
+    max-width: 400px;
+}
+
+.regis-custom-select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+/* ปรับแต่งส่วนข้อมูลผู้ใช้ */
+.user-info-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap; /* ป้องกันชื่อผู้ใช้ตัดบรรทัด */
+}
+
+/* --- Responsive สำหรับ Tablet และ Mobile --- */
+
+@media (max-width: 992px) {
+    .user-name {
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (max-width: 768px) {
+    .user-status-content {
+        flex-direction: row-reverse; /* เปลี่ยนจากแนวนอนเป็นแนวตั้ง */
+        gap: 0px;
+        padding: 10px 1px;
+    }
+
+    .scholarship-selector-group {
+        width: 100%;
+        max-width: 100%;
+        order: 2; /* เอาเลือกทุนไว้ข้างล่างบนมือถือ */
+    }
+
+    .user-info-actions {
+        width: 100%;
+        justify-content: end; /* ให้ชื่ออยู่ซ้าย ปุ่ม logout อยู่ขวา */
+        order: 1;
+        border-bottom: 1px dashed #ff2929;
+    }
+
+    /* ปรับขนาด Select ให้เต็มจอมือถือ */
+    .regis-custom-select-trigger {
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .form-select-option{
+        width: 100px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    .user-status-content {
+        padding: 10px 15px;
+    }
+
+    .user-name {
+        font-size: 14px;
+        max-width: 100px;
+    }
+
+    .logout-link {
+        font-size: 14px;
+    }
+
+    .user-avatar-circle {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    /* ปรับตัวเลือกที่เด้งลงมาให้ใหญ่กดง่ายบนมือถือ */
+    .regis-custom-options {
+        position: fixed; /* เปลี่ยนเป็น Fixed บนมือถือเพื่อให้นั่งทับทุกอย่าง */
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-height: 50vh;
+        border-radius: 20px 20px 0 0;
+        box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        z-index: 9999;
+    }
+
+    .regis-custom-options.show {
+        transform: translateY(0);
+    }
+
+    .regis-option {
+        padding: 15px 20px;
+        border-bottom: 1px solid #f8f9fa;
+        text-align: center;
+    }
+}
+
+.dashboard-container { 
+    max-width: 1400px; 
+    margin: 30px auto; 
+    padding: 0 20px; 
+}
+
+.main-content { 
+    background-color: #ffffff; 
+    padding: 30px 40px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    border-radius: 12px; 
+    height: 100%;
+    min-height: 500px;
+}
+
+.site-footer {
+    /* margin-top: 50px; */
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 860px; /* ขนาดตามต้นฉบับเดิม */
+    gap: 20px;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.info-panel {
+    flex: 0 0 52%; /* ฝั่งน้ำเงิน 52% */
+    background-color: #123985;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.passport-panel {
+    flex: 0 0 48%; /* ฝั่งขาว 48% */
+    background-color: #ffffff;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* --- Header Sticky Logic --- */
+.sticky-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1100; /* ให้อยู่เหนือเนื้อหาอื่น */
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+
+/* --- Teacher Layout Fix --- */
+.teacher-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+    min-height: calc(100vh - 200px); /* หักลบความสูง Header/Footer */
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.teacher-centered-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 60px 40px;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+}
+
+.teacher-dropdown-box {
+    max-width: 600px; /* จำกัดความกว้างสูงสุดบนจอคอม */
+    margin: 0 auto;
+    font-size: 16px;  /* ขนาดมาตรฐานที่กดง่ายบนมือถือ */
+}
+
+
+/* ปรับเมื่อหน้าจอเล็กลง (เช่น iPhone, Android ทั่วไป) */
+@media (max-width: 576px) {
+    .teacher-dropdown-box {
+        font-size: 13px;       /* ลดขนาดตัวอักษร */
+        padding: 4px 8px;      /* ลด Padding ให้ดูผอมลง */
+        max-width: 90%;        /* ให้กว้างเกือบเต็มจอ */
+    }
+    
+    /* ปรับขนาดตัวอักษรข้างใน option */
+    .teacher-dropdown-box option {
+        font-size: 12px;
+    }
+}
+
+
+/* --- Application Form Layout --- */
+.app-form-container {
+    max-width: 960px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+.student-photo-wrapper {
+    width: 110px;
+    height: 140px;
+    border: 1.5px solid #333;
+    padding: 2px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.student-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Confirmation Page Layout --- */
+.confirm-page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* ปรับตามความสูง header/footer */
+    padding: 40px 20px;
+}
+
+.confirm-card-container {
+    background: #ffffff;
+    max-width: 850px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+    .login-container { flex-direction: column; }
+    .info-panel, .passport-panel { flex: 1 0 auto; width: 100%; }
+}
+
+@media (min-width: 992px) {
+    .col-sidebar-20 {
+        flex: 0 0 20% !important;
+        width: 20% !important;
+    }
+    .col-main-80 {
+        flex: 0 0 80% !important;
+        width: 80% !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .dashboard-container { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+    .main-content { padding: 20px; }
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+/* ส่วนครอบฟอร์มแบบ Flex (Horizontal Form) */
+.form-group-flex {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* --- Footer Detailed Layout --- */
+
+.footer-top {
+    background-color: var(--footer-dark-blue);
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.footer-banner-text {
+    display: inline-block;
+    position: relative;
+    background: var(--footer-dark-blue);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 0px;
+    z-index: 2;
+    width: 100%;
+}
+
+.footer-bottom {
+    background-color: var(--footer-dark-blue);
+    color: #ffffff;
+    padding: 10px 0px;
+    text-align: center;
+    line-height: 1.7;
+    width: 100%;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+    font-size: 13px;
+}
+
+/* --- Grid Extensions --- */
+
+/* Note: คลาสเหล่านี้ทำงานคล้ายกับ col-lg-2 และ col-lg-10 ของ Bootstrap 5 
+   แต่กำหนดค่าคงที่เป็น % เพื่อล็อคสัดส่วน Sidebar ในหน้า Dashboard */
+.col-sidebar-20 {
+    flex: 0 0 20%;
+    width: 20%;
+}
+
+.col-main-80 {
+    flex: 0 0 80%;
+    width: 80%;
+}
+
+/* =========================================
+   RESPONSIVE: ADDITIONAL LAYOUT
+   ========================================= */
+
+@media (max-width: 1024px) {
+    /* จัดการให้ Container ยืดเต็มจอมากขึ้นบน Tablet */
+    .dashboard-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 18px;
+    }
+
+    .form-group-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* ปรับ Footer ให้แสดงผลเหมาะสมบนมือถือ */
+    .footer-bottom p {
+        padding: 0 15px;
+        font-size: 12px;
+    }
+}
+
+

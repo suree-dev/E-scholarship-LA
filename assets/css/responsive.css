@@ -1,0 +1,464 @@
+/*responsive.css*/
+
+@media (max-width: 1024px) {
+
+    /* --- จัดการ Navbar ให้ชิดขอบ --- */
+    .navbar {
+        padding: 10px 20px !important;
+        /* ปรับ Padding ให้พอดี */
+        width: 100%;
+        margin-bottom: 0 !important;
+        /* บังคับลบช่องว่างด้านล่าง */
+    }
+
+    .navbar .navbar-logo {
+        height: 60px;
+    }
+
+    .navbar .social-button {
+        padding: 8px 18px;
+        font-size: 1rem;
+    }
+
+    /* --- จัดการ Status Bar ให้ชิดขวาและติด Navbar --- */
+    .user-status-bar {
+        margin-top: -1px !important;
+        /* ดึงขึ้นเล็กน้อยเพื่อปิดรอยต่อสีขาว */
+        width: 100% !important;
+    }
+
+    .user-status-content {
+        width: 100% ;
+        display: flex;
+        justify-content: flex-end;
+        /* บังคับให้เนื้อหาไปกองทางขวา */
+        padding-right: 20px;
+        /* ระยะห่างจากขอบขวา */
+        box-sizing: border-box;
+    }
+
+    /* --- Footer & Container Styles (ของเดิม) --- */
+    .container {
+        width: 90%;
+        margin: 30px auto;
+        padding: 25px;
+    }
+
+    .site-footer {
+        margin-top: 50px;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    .footer-top {
+        background-color: transparent;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .footer-banner-text {
+        display: inline-block;
+        background: #003b6f;
+        color: #ffffffff;
+        font-weight: bold;
+        padding: 8px 3px !important;
+        width: 100%;
+    }
+
+    .footer-bottom {
+        background-color: #003b6f;
+        color: #ffffffff;
+        padding: 10px 3px !important;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .footer-bottom p {
+        margin: 0;
+    }
+
+    /* --- Dashboard/Sidebar Styles (ของเดิม) --- */
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        max-height: 100%;
+    }
+
+    .dashboard-container {
+        flex-direction: column;
+        flex: 1;
+        width: 100% !important; /* ปรับให้เต็มจอในโหมด Dashboard ของ Admin */
+    }
+
+    .sidebar {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .sidebar .menu-header {
+        cursor: pointer;
+        position: relative;
+    }
+
+    .sidebar .menu-header::after {
+        content: '▼';
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar .menu-list li:not(.active) {
+        display: none;
+    }
+
+    .sidebar.is-open .menu-header::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .sidebar.is-open .menu-list li {
+        display: flex;
+    }
+
+    /* [regis.php] */
+    .regis-container {
+        max-width: 85% !important;
+        padding: 40px 50px !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /*==index.php==*/
+    .social-button {
+        margin-left: -60px;
+    }
+
+    /* ==status_bar.php (Responsive Part)== */
+    .user-status-content {
+        padding-right: 20px;
+        font-size: 14px;
+    }
+
+    /* ==regis.php== */
+    .regis-container {
+        max-width: 95% !important;
+        padding: 30px 20px !important;
+    }
+
+    .regis-scholarship-form .form-group-horizontal {
+        flex-direction: column !important;
+    }
+
+    .regis-form-actions {
+        gap: 15px !important;
+    }
+
+    .btn-regis-cancel,
+    .btn-regis-submit {
+        width: 100% !important;
+    }
+
+    /* == academic_year.php (Responsive Part) == */
+    .main-content { padding: 20px; }
+    .admin-form .form-group { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .admin-form .form-group label { flex-basis: auto; }
+
+}
+
+/* ===================Responsive 450=================== */
+
+@media (max-width: 450px) {
+
+    /* ==navbar.php== */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        width: 100% !important;
+    }
+
+    .navbar .navbar-logo {
+        height: 80% !important;
+        width: 90% !important;
+    }
+
+    .navbar .social-button {
+        font-size: 14px;
+        width: 150px;
+        padding: 8px 0px;
+    }
+
+    .navbar .social-button svg {
+        width: 20px !important;
+        height: 20px !important;
+        margin-left: 8%;
+    }
+
+    /* ==index.php== */
+    .news-box {
+        font-size: 15px;
+    }
+
+    .news-box-header a {
+        font-size: 15px;
+    }
+
+    .news-item .new-badge {
+        font-size: 9px;
+    }
+
+    .login-container {
+        flex-direction: column;
+        width: 85%;
+        height: 65%;
+    }
+
+    .info-panel {
+        flex-direction: row;
+        justify-content: center;
+        flex-basis: 20%;
+    }
+
+    .info-panel .illustration {
+        display: none;
+    }
+
+    .info-footer .faculty-logo {
+        width: 65%;
+        margin-left: -30px;
+    }
+
+    .social-button {
+        height: 14px;
+        width: 95px;
+        margin-left: -20px !important;
+        font-size: 11px;
+    }
+
+    .social-button svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .passport-panel {
+        padding: 6px 15px;
+    }
+
+    .passport-panel .scholarship-logo {
+        max-width: 625px;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+
+    .passport-panel .login-box {
+        margin: 10px auto 0 auto;
+    }
+
+    .passport-panel .login-box .user-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .passport-panel .login-box .user-icon svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .passport-panel .login-box .title-wrapper {
+        width: 90%;
+    }
+
+    .passport-panel .login-box .title-wrapper .title-text {
+        font-size: 18px;
+    }
+
+    .passport-panel .action-buttons {
+        width: 90%;
+        margin-bottom: 10%;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 0;
+        height: auto;
+    }
+
+    .btn-primary {
+        margin-bottom: 20px;
+    }
+
+/* ==status_bar.php (Responsive Part)== */
+.user-status-content {
+    flex-direction: column; /* ให้ช่องเลือกทุนกับกลุ่มชื่อเรียงลงมา */
+    padding: 15px 10px;
+    gap: 12px;
+    text-align: center;
+}
+
+.scholarship-selector-group {
+    width: 100%;
+}
+
+.status-bar-select {
+    width: 95%; /* ขยายให้กว้างขึ้นหน่อย */
+}
+
+.user-status-bar .regis-custom-select-trigger {
+    height: 38px !important;    /* ปรับลดความสูงเฉพาะจุดนี้ */
+    font-size: 15px !important; /* ปรับขนาดฟอนต์ให้เล็กลงเฉพาะจุดนี้ */
+}
+
+/* เพิ่มส่วนนี้: จัดการให้ชื่อและปุ่มออกจากระบบอยู่แถวเดียวกัน */
+.user-info-actions {
+    display: flex;
+    flex-direction: row; /* บังคับให้อยู่บรรทัดเดียวกัน */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* ระยะห่างระหว่างชื่อกับปุ่ม */
+    width: 100%;
+    font-size: 14px;
+}
+
+.logout-link {
+    border-top: none !important; /* ลบเส้นคั่นแนวนอนเดิมออก */
+    padding-top: 0 !important;
+    width: auto !important; /* ยกเลิกการขยายเต็มหน้าจอ */
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    
+    /* เพิ่มเส้นคั่นแนวตั้ง (Optional) ถ้าต้องการให้ดูแบ่งส่วนชัดเจน */
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    padding-left: 15px;
+}
+
+.user-name {
+    white-space: nowrap; /* ป้องกันชื่อตัดบรรทัด */
+}
+/* ====================================================================================================== */
+
+    /* ==regis.php== */
+    .regis-form-header h1 {
+        font-size: 20px !important;
+    }
+
+    .regis-container {
+        max-width: 80% !important;
+        padding: 30px 20px !important;
+    }
+
+}
+
+/* ===================Responsive 400=================== */
+@media (max-width: 400px) {
+
+    /* ==navbar.php== */
+    .navbar {
+        width: 100%;
+    }
+
+    .navbar .social-button {
+        padding: 8px 18px ;
+        width: 110px ;
+        margin-left: 3% !important;
+    }
+
+    .navbar .social-button svg {
+        margin-left: -4%;
+        /* ปรับตำแหน่งไอคอนเล็กน้อย */
+    }
+
+    /* ==index.php== */
+    .news-box {
+        font-size: 13px;
+        margin-top: 20px;
+    }
+
+    .news-box-header a {
+        font-size: 13px;
+    }
+
+    .news-item .new-badge {
+        font-size: 8px;
+    }
+
+    .info-footer .faculty-logo {
+        width: 70%;
+        /* ปรับขนาดโลโก้คณะให้ใหญ่ขึ้นนิดหน่อยในจอแคบ */
+    }
+
+    .social-button {
+        width: 90px;
+        margin-left: -40px !important;
+    }
+
+    .social-button svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .passport-panel .scholarship-logo {
+        margin-top: 6%;
+        /* เพิ่มระยะขอบบนเล็กน้อย */
+    }
+
+    .passport-panel .login-box .user-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .passport-panel .login-box .user-icon svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .passport-panel .login-box .title-wrapper {
+        width: 85%;
+        max-width: 300px;
+    }
+
+    .passport-panel .login-box .title-wrapper .title-text {
+        font-size: 17px;
+    }
+
+    .passport-panel .action-buttons {
+        width: 85%;
+    }
+
+    /* ==status_bar.php== */
+    .user-status-content {
+        font-size: 12px;
+        gap: 8px;
+    }
+
+    .status-bar-select {
+        font-size: 12px;
+    }
+
+    /* admin.php */
+    .main-content .content-header {
+        font-size: 19px !important;
+    }
+
+    input.is-invalid {
+        border-color: #dc3545 !important;
+    }
+
+    /* ==========footer.php========== */
+    .footer-banner-text {
+        width: 99% !important;
+    }
+
+    .footer-bottom {
+        width: 99% !important;
+    }
+
+}

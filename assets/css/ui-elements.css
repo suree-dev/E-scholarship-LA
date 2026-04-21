@@ -1,0 +1,376 @@
+/* =========================================
+   BUTTONS: ACTION & SAVING
+   ========================================= */
+
+/* ปุ่มบันทึก (ทรงแคปซูล) */
+.btn-save {
+    background-color: var(--disabled-gray);
+    color: #ffffff;
+    padding: 10px 80px;
+    border-radius: 30px;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.btn-save:disabled {
+    background-color: #cccccc !important;
+    color: #ffffff !important;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.btn-save:not(:disabled) {
+    background-color: #28a745; /* สีเขียว */
+    color: white;
+    cursor: pointer;
+}
+
+.btn-save:hover:not(:disabled) {
+    background-color: #24943e;
+    transform: translateY(-1px);
+}
+
+/* ปุ่มขั้นตอนถัดไป / ส่งข้อมูล */
+.btn-next-step, .btn-regis-submit {
+    background-color: #003c71 !important;
+    color: white !important;
+    padding: 12px 45px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-next-step:hover:not(:disabled) {
+    background-color: #002d55 !important;
+    transform: translateX(5px);
+}
+
+.btn-next-step:disabled {
+    background-color: #cccccc !important;
+    color: #666 !important;
+    cursor: not-allowed;
+}
+
+/* ปุ่มยกเลิก / ย้อนกลับ */
+.btn-cancel, .btn-regis-cancel {
+    background-color: #6c757d !important;
+    color: white !important;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: background 0.3s;
+    border: none;
+}
+
+.btn-back-pill {
+    background-color: #6c757d !important;
+    color: #ffffff !important;
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+/* =========================================
+   BUTTONS: PILL & SPECIAL SHAPES
+   ========================================= */
+
+/* Note: .btn-primary เป็นคลาส Bootstrap 5 แต่ .btn-primary-pill เป็นการกำหนดรูปร่างใหม่ */
+.btn-primary-pill {
+    background-color: #3b7ddd;
+    color: white !important;
+    padding: 8px 25px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-primary-pill:hover {
+    background-color: #123985;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-export-pill {
+    display: inline-block;
+    padding: 8px 25px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-login-pill {
+    display: block !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    background-color: #3b7ddd !important;
+    color: white !important;
+    text-decoration: none !important;
+    padding: 12px 0 !important;
+    border-radius: 50px !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    border: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+
+/* ปุ่มล้างข้อมูล */
+.btn-clear {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 6px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Prompt', sans-serif;
+}
+
+.btn-clear:hover:not(:disabled) {
+    background-color: #d9534f;
+    color: white;
+    border-color: #d9534f;
+}
+
+/* =========================================
+   BUTTONS: CIRCLE & ICON OUTLINE
+   ========================================= */
+
+.btn-outline-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-decoration: none;
+    margin: 0 3px;
+    transition: all 0.2s;
+    background: #ffffff;
+}
+
+.btn-outline-edit { border: 1.5px solid #ffc107; color: #ffc107; }
+.btn-outline-edit:hover { background-color: #ffc107; color: white; }
+
+.btn-outline-delete { border: 1.5px solid #dc3545; color: #dc3545; }
+.btn-outline-delete:hover { background-color: #dc3545; color: white; }
+
+.btn-outline-view { border: 1.5px solid #0dcaf0; color: #0dcaf0; }
+.btn-outline-view:hover { background-color: #0dcaf0; color: white; }
+
+.btn-outline-pdf, .btn-pdf-download { border: 1.5px solid #6c757d; color: #6c757d; }
+.btn-outline-pdf:hover { background-color: #6c757d; color: white; }
+
+.btn-outline-approve { border: 1.5px solid #28a745; color: #28a745; }
+.btn-outline-approve:hover { background-color: #28a745; color: white; }
+
+.btn-outline-lock { border: 1.5px solid #6c757d; color: #6c757d; cursor: not-allowed !important; background-color: transparent; }
+
+.btn-outline-circle.disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    background-color: #6c757d;
+    border-color: #6c757d !important;
+    color: #fff !important;
+}
+
+/* =========================================
+   BADGES & STATUS INDICATORS
+   ========================================= */
+
+/* Note: .badge เป็นคลาส Bootstrap 5 โค้ดนี้สร้าง Variant ใหม่ที่นุ่มนวลขึ้น */
+.badge-custom {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid transparent;
+}
+
+.badge-success-light {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.badge-warning-light {
+    background-color: #fff3cd;
+    color: #856404;
+    border-color: #ffeeba;
+}
+
+.status-suspended {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.new-badge {
+    background-color: #28a745;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* สถานะในหน้าสมัครทุน */
+.btn-app-waiting { background-color: #ff9800 !important; color: white !important; cursor: default; }
+.btn-app-success { background-color: #28a745 !important; color: white !important; cursor: default; }
+.btn-app-print { background-color: #003b6f !important; color: white !important; }
+
+/* =========================================
+   OTHER UI ELEMENTS
+   ========================================= */
+
+.scroll-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    background-color: var(--dark-blue);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-icon-login {
+    width: 65px;
+    height: 65px;
+    background: #123985;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-icon-login svg {
+    width: 32px;
+    height: 32px;
+    fill: white;
+}
+
+/* =========================================
+   RESPONSIVE: UI ELEMENTS
+   ========================================= */
+
+@media (max-width: 768px) {
+    .btn-save {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .btn-clear {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .btn-next-step, .btn-regis-submit {
+        width: 30%;
+        text-align: center;
+    }
+}
+
+/* --- Content Display Elements (View Details) --- */
+.detail-label-bold {
+    display: block;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.detail-box-gray {
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px 15px;
+    min-height: 48px;
+    color: #333;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+.detail-box-gray.textarea-style {
+    align-items: flex-start;
+    min-height: 100px;
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* --- Score Edit Elements --- */
+.edit-score-input { 
+    width: 90px; 
+    padding: 5px; 
+    border: 1px solid #3b7ddd; 
+    border-radius: 4px; 
+    text-align: center; 
+    display: none; /* ซ่อนไว้ก่อนเข้าโหมดแก้ไข */
+}
+
+.action-footer-center { 
+    text-align: center; 
+    margin-top: 35px; 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+}
+
+/* ปุ่มโหมดแก้ไข (ทรงแคปซูล) */
+.btn-mode-orange { background-color: #f0ad4e !important; color: white !important; border-radius: 35px; padding: 10px 30px; }
+.btn-mode-green { background-color: #28a745 !important; color: white !important; border-radius: 35px; padding: 10px 30px; display: none; }
+.btn-mode-gray { background-color: #6c757d !important; color: white !important; border-radius: 35px; padding: 10px 30px; display: none; }
+
+/* --- Buttons for Dynamic Forms --- */
+
+/* ปุ่มลบแถว (สีแดงอ่อน) */
+.btn-delete-row-custom {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 5px 15px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+.btn-delete-row-custom:hover {
+    background-color: #dc3545;
+    color: white;
+}

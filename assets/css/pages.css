@@ -1,0 +1,608 @@
+/* =========================================
+   1. LOGIN & NEWS PAGE COMPONENTS
+   ========================================= */
+
+/* News Section */
+.news-box {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.news-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 600;
+}
+
+.news-box-header a {
+    color: white !important;
+    text-decoration: underline !important;
+    font-size: 14px;
+}
+
+.news-box-body {
+    padding: 15px 20px;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    text-decoration: none !important;
+    color: #333 !important;
+}
+
+.news-item:hover {
+    color: #3b7ddd !important;
+}
+
+.news-item .icon {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Login Panel Details */
+.illustration {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+.faculty-logo {
+    width: 220px;
+    margin-left: -40px;
+}
+
+.scholarship-logo-login {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+/* ปุ่ม Facebook เฉพาะหน้า Login (มีการใช้ !important เพื่อคุมสีทับค่าอื่น) */
+.social-button-login {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background-color: #3b7ddd !important;
+    color: white !important;
+    padding: 8px 18px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    text-decoration: none !important;
+    margin-left: -35px !important;
+    white-space: nowrap !important;
+    transition: all 0.3s ease;
+}
+
+.social-button-login:hover {
+    background-color: #123985 !important;
+    transform: translateY(-1px);
+}
+
+.title-divider-login {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 280px;
+    margin-bottom: 25px;
+}
+
+.title-divider-login .line {
+    flex: 1;
+    height: 2px;
+    background: #123985;
+}
+
+.title-divider-login .text {
+    padding: 0 15px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #123985;
+    white-space: nowrap;
+}
+
+.issue-reporter-login {
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.issue-reporter-login a {
+    color: #ff3f3f !important;
+    text-decoration: underline !important;
+    font-weight: 600;
+}
+
+/* =========================================
+   2. TEACHER & COMMITTEE VIEW COMPONENTS
+   ========================================= */
+
+.teacher-header-text,
+.teacher-title-h {
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Student Grid & Cards */
+.student-grid-layout,
+.student-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.student-card-item,
+.student-card-box {
+    width: 220px;
+    height: 180px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.student-card-item:hover,
+.student-card-box:hover {
+    transform: scale(1.03);
+}
+
+.student-card-item i,
+.student-card-box i {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.student-card-item .seq-text,
+.student-card-box .label-text {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.student-card-item .name-text,
+.student-card-box .name-text {
+    font-size: 14px;
+    opacity: 0.95;
+    text-align: center;
+    padding: 0 10px;
+}
+
+/* สีสถานะการตรวจ */
+.student-card-item.not-scored,
+.student-card-box.not-scored {
+    background-color: #d9434e;
+}
+
+.student-card-item.scored,
+.student-card-box.scored {
+    background-color: #28a745;
+}
+
+/* กล่องแสดงผลเหตุผล (Committee View) */
+.content-display-gray {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 25px;
+    min-height: 250px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+    text-align: justify;
+}
+
+/* ส่วนประเมินผล (Scoring Panel) */
+.scoring-panel,
+.scoring-bottom-panel {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.scored-status-msg {
+    color: #28a745;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* =========================================
+   3. SCHOLARSHIP APPLICATION COMPONENTS
+   ========================================= */
+
+.student-info-highlight {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    padding: 20px;
+    background: #fcfcfc;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.student-info-highlight strong {
+    color: #003c71;
+    font-weight: 700;
+}
+
+.student-info-highlight span {
+    margin: 0 12px;
+    display: inline-block;
+}
+
+.certification-warning-box {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff9f0;
+    border: 1px solid #ffeeba;
+    border-radius: 10px;
+    color: #856404;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+/* Document & Certificate Filling */
+.cert-title-h,
+.cert-fill-title {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-size: 17px;
+    color: #000;
+}
+
+.cert-text-paragraph,
+.cert-fill-box {
+    font-size: 15px;
+    line-height: 2.5;
+    text-align: justify;
+    color: #333;
+}
+
+.cert-fill-box {
+    margin-top: 20px;
+    padding: 35px;
+    background-color: #fcfcfc;
+    border-radius: 12px;
+    border: 1px solid #eeeeee;
+}
+
+.doc-upload-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.file-status-tag {
+    font-size: 0.85rem;
+    color: #28a745;
+    font-weight: 500;
+    margin-top: 5px;
+    display: block;
+}
+
+/* =========================================
+   4. CONFIRMATION & MODAL COMPONENTS
+   ========================================= */
+
+.confirm-main-title {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 35px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.confirm-instruction-box,
+.modal-instruction-box {
+    border: 1.8px solid #333;
+    border-radius: 20px;
+    padding: 35px 45px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.confirm-section-header {
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 12px;
+    display: block;
+    color: #000;
+}
+
+.confirm-list-unstyled {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px;
+}
+
+.confirm-checkbox-group {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.confirm-checkbox-group input {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+/* Note: .modal เป็นคลาส Bootstrap 5 แต่โค้ดนี้สร้าง Overlay และ Card ขึ้นมาใหม่เอง */
+.modal-custom-overlay {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.modal-custom-card {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 45px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 850px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+/* =========================================
+   RESPONSIVE: PAGES
+   ========================================= */
+
+@media (max-width: 768px) {
+    .faculty-logo {
+        width: 180px;
+        margin-left: 0;
+    }
+
+    .social-button-login {
+        margin-left: 0 !important;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .student-card-item,
+    .student-card-box {
+        width: 100%;
+        height: 150px;
+    }
+
+    .confirm-instruction-box,
+    .modal-instruction-box {
+        padding: 20px;
+    }
+
+    .doc-upload-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .modal-custom-card {
+        padding: 20px;
+        margin: 10% auto;
+    }
+}
+
+/* --- News System Layout --- */
+.news-header-banner {
+    background: linear-gradient(135deg, #003b6f 0%, #0056a3 100%);
+    color: white;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.news-header-banner h2 {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.news-header-banner p {
+    font-weight: 300;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* --- All News Page Grid --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.news-card-item {
+    background: white;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+    overflow: hidden;
+}
+
+.news-card-item:hover {
+    transform: translateY(-8px);
+}
+
+.news-card-item .card-body {
+    padding: 25px;
+}
+
+.news-card-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.meta-info {
+    display: flex;
+    gap: 20px;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.news-title-h {
+    font-size: 30px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.4;
+}
+
+.news-content-text {
+    font-size: 17px;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 45px;
+    white-space: pre-line;
+}
+
+/* --- Attachment Box Style --- */
+.attachment-section {
+    background-color: #f8fbff;
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #e1e9f5;
+}
+
+.attachment-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.attachment-item {
+    background: white;
+    border-radius: 12px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none !important;
+    transition: all 0.2s;
+    border: 1px solid #ececec;
+    margin-bottom: 12px;
+}
+
+.attachment-item:hover {
+    border-color: #004685;
+    transform: scale(1.01);
+}
+
+.file-icon {
+    font-size: 32px;
+    color: #e74c3c;
+    margin-right: 20px;
+}
+
+.file-details {
+    flex-grow: 1;
+}
+
+.file-name {
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+    display: block;
+}
+
+.file-path {
+    color: #999;
+    font-size: 13px;
+    word-break: break-all;
+}
+
+.download-btn-icon {
+    color: #555;
+    font-size: 18px;
+}
+
+/* --- Navigation Button --- */
+.back-button-container {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.btn-back-custom {
+    background: white;
+    border: 1px solid #ddd;
+    color: #666;
+    padding: 12px 30px;
+    border-radius: 35px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.btn-back-custom:hover {
+    background: #fcfcfc;
+    border-color: #bbb;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}

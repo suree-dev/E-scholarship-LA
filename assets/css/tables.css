@@ -1,0 +1,255 @@
+/* =========================================
+   TABLE HELPERS (SEARCH & ACTION BAR)
+   ========================================= */
+
+.action-bar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+/* ปุ่มค้นหาแบบดั้งเดิมในแถบตาราง */
+.btn-search-custom {
+    padding: 8px 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-search-custom:hover {
+    background-color: #e9ecef;
+}
+
+/* =========================================
+   MAIN DATA TABLE
+   ========================================= */
+
+/* Note: Bootstrap 5 มี .table แต่ .data-table คือการกำหนดสไตล์เฉพาะสำหรับ Dashboard */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table thead th {
+    background-color: #f8f9fa;
+    padding: 15px;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 1px solid #eee;
+}
+
+.data-table td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+.data-table tfoot td {
+    font-weight: bold;
+    padding-top: 15px;
+    border-bottom: none;
+}
+
+/* ช่อง Checkbox ภายในตาราง */
+.checkbox-cell {
+    width: 150px;
+    text-align: center;
+}
+
+.checkbox-cell input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+/* =========================================
+   APPLICATION SPECIFIC TABLES
+   ========================================= */
+
+/* ตารางแสดงผลข้อมูล (Read-only) ในใบสมัคร */
+.table-app {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 14.5px;
+}
+
+.table-app th {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.table-app td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    background-color: #efefef; /* สีเทาสำหรับอ่านอย่างเดียว */
+}
+
+/* ตารางสำหรับกรอกข้อมูล (Fillable) */
+.table-app-fill {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-app-fill th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    padding: 12px;
+    border: 1px solid #dee2e6;
+    text-align: center;
+}
+
+.table-app-fill td {
+    padding: 0; /* เพื่อให้ช่อง input ขยายเต็มช่องตาราง */
+    border: 1px solid #dee2e6;
+}
+
+.table-app-fill input {
+    width: 100%;
+    height: 50px;
+    border: none !important;
+    padding: 10px;
+    text-align: center;
+}
+
+/* =========================================
+   LISTS & ROW-BASED DATA
+   ========================================= */
+
+/* รายการล้างข้อมูล (Clear Data Section) */
+.clear-list {
+    list-style: none;
+    padding: 0;
+}
+
+.clear-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.clear-item:last-child {
+    border-bottom: none;
+}
+
+.item-text {
+    font-size: 16px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.sub-item {
+    padding-left: 45px;
+    background-color: #fafafa;
+}
+
+.sub-item .item-text {
+    font-size: 15px;
+    color: #666;
+}
+
+/* รายการดาวน์โหลดเอกสาร */
+.doc-download-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px dashed #ddd;
+    transition: background 0.2s;
+}
+
+.doc-download-row:hover { 
+    background-color: #fcfcfc; 
+}
+
+/* =========================================
+   RESPONSIVE: TABLES
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* ทำให้ตารางหลักไถข้างได้บนมือถือ */
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .data-table th:first-child,
+    .data-table td:first-child {
+        width: 50px;
+    }
+
+    .data-table th:last-child,
+    .data-table td:last-child {
+        width: 100px;
+    }
+
+    /* เปลี่ยนรายการล้างข้อมูลเป็นแนวตั้ง */
+    .clear-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .sub-item {
+        padding-left: 20px;
+    }
+
+    /* ปรับปรุงแถบจัดการตาราง */
+    .action-bar-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* --- Table Summary & Pagination (view_score_details.php) --- */
+.summary-row td { 
+    font-weight: bold; 
+    border-top: 2px solid #333 !important; 
+    background-color: #fcfcfc;
+}
+
+.pagination { 
+    display: flex; 
+    justify-content: center; 
+    list-style: none; 
+    padding: 0; 
+    margin: 25px 0; 
+    gap: 8px; 
+}
+.pagination li a { 
+    padding: 8px 16px; 
+    text-decoration: none; 
+    color: #333; 
+    border: 1px solid #ddd; 
+    border-radius: 6px; 
+    transition: 0.3s; 
+    background-color: #fff;
+}
+.pagination li.active a { 
+    background-color: #003c71; 
+    color: white; 
+    border-color: #003c71; 
+}
+.pagination li a:hover:not(.active) { 
+    background-color: #f1f1f1; 
+}

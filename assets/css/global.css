@@ -1,0 +1,280 @@
+/*global.css*/
+
+:root {
+    --primary-blue: #3b7ddd;
+    --primary-blue-hover: #3167b8;
+    --facebook-blue: #1877F2;
+    --facebook-blue-hover: #166FE5;
+    --dark-blue: #123985;
+    --dark-red: #ff0000;
+    /* เพิ่มเติมจาก sidebar/academic_year */
+    --navy-blue: #003c71;
+    --light-blue: #eef2ff;
+    --border-color: #f0f0f0;
+}
+
+/* --- 2. Global Styles --- */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Prompt', sans-serif;
+    background-color: #e3edf7;
+    /* สีพื้นหลังเริ่มต้น */
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+/* --- 3. UI Components ที่ใช้ซ้ำ --- */
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    font-family: 'Prompt', sans-serif;
+    text-align: center;
+}
+
+.btn-outline-edit {
+    background-color: transparent;
+    border: 1px solid #ffc107;
+    color: #ffc107;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 500 !important;
+}
+
+.btn-outline-edit:hover {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-outline-delete {
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 500 !important;
+}
+
+.btn-outline-delete:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Button Color Variants */
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-blue-hover);
+}
+
+.btn-submit,
+.btn-save {
+    background-color: #28a745;
+    border-radius: 30px;
+}
+
+.btn-submit:hover,
+.btn-save:hover {
+    background-color: #218838;
+}
+
+/* สไตล์เพิ่มเติมสำหรับปุ่มที่ถูก disable (จาก academic_year) */
+.btn-save:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.btn-cancel:hover {
+    background-color: #c82333;
+}
+
+.btn-back {
+    background-color: #6c757d;
+    border-radius: 30px;
+}
+
+.btn-back:hover {
+    background-color: #50575c;
+}
+
+/* --- สไตล์สำหรับไอคอน --- */
+.action-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.95rem;
+}
+
+.btn-view {
+    color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-view:hover {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-pdf {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-pdf:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-approve {
+    color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-approve:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-edit {
+    color: #ffc107;
+    border-color: #ffc107;
+    border-radius: 30px;
+}
+
+.btn-edit:hover {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-delete-icon {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-delete-icon:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.data-table .actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Base Form Styles */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+label .required,
+.required {
+    color: red;
+    margin-left: 4px;
+}
+
+.add-form-container {
+    border: 1px solid #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background-color: #fafafa;
+    height: 50px;
+}
+
+.add-form-container .form-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.add-form-container .form-group label {
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+.add-form-container .form-group .input-wrapper {
+    flex-grow: 1;
+}
+
+.add-form-container .form-group .required {
+    color: #ff0000;
+    margin-left: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Prompt', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.input-error {
+    border: 2px solid #ff4d4d !important;
+}
+
+input:disabled,
+.regis-custom-select-wrapper.disabled .regis-custom-select-trigger {
+    background-color: #e9ecef !important;
+    cursor: not-allowed;
+}
